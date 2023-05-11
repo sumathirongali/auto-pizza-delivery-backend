@@ -2,9 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const pizzasRouter = require('./routes/pizzas');
-const ordersRouter = require('./routes/orders');
 const deliveryRouter = require('./routes/deliveries');
+const coordinatesRouter = require('./routes/coordinates');
 
 dotenv.config();
 
@@ -17,10 +16,8 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .catch((err) => console.error('Failed to connect to MongoDB', err));
   
 
-app.use('/api/pizzas', pizzasRouter);
-app.use('/api/orders', ordersRouter);
-
 app.use('/api/deliveries', deliveryRouter);
+app.use('/api/coordinates', coordinatesRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

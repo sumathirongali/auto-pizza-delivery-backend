@@ -3,7 +3,6 @@ const Delivery = require('../models/Delivery');
 const router = express.Router();
 const neo4j = require('neo4j-driver');
 const dotenv = require('dotenv');
-const loadDeliveriesToNeo4j = require('../dataSync/loadDeliveriesToNeo4j');
 const fetchShortPath = require('../dataSync/fetchShortpath');
 const fetchCoordinates = require('../dataSync/fetchCoordinates');
 dotenv.config();
