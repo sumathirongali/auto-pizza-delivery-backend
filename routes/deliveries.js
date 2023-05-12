@@ -22,15 +22,7 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 
-     // Call the function whenever you want to load deliveries from MongoDB to Neo4j
-     debugger;
-     fetchShortPath()
-       .then(() => {
-         console.log('Deliveries loaded to Neo4j successfully');
-       })
-       .catch((error) => {
-         console.error('Error loading deliveries to Neo4j:', error);
-       }); 
+
 });
 
 
@@ -64,6 +56,16 @@ router.post('/', async (req, res) => {
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
+
+  // Call the function whenever you want to load deliveries from MongoDB to Neo4j
+  debugger;
+  fetchShortPath()
+    .then(() => {
+      console.log('Deliveries loaded to Neo4j successfully');
+    })
+    .catch((error) => {
+      console.error('Error loading deliveries to Neo4j:', error);
+    }); 
     
 });
 
